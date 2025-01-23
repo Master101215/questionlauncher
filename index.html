@@ -3,15 +3,15 @@
 	<head>
 		<script>
 			let userName = prompt("Login (Username)", '');
-			while(userName === 'Admin' || userName === '') {
-			  if (userName === 'Admin') {
+			while(userName === 'user' || userName === '') {
+			  if (userName === 'user') {
 				let pass = prompt('Login (Password?)', '');
-				if (pass === 'TheMaster') {
+				if (pass === 'test') {
 				  alert('Welcome!');
-				  break;  // Exit the loop after successful login
+				  break;
 				} else if (pass === '' || pass === null) {
 				  alert('Canceled');
-				  break;  // Exit the loop if canceled
+				  break;
 				} else {
 				  alert('Wrong password');
 				}
@@ -20,7 +20,7 @@
 			  } else {
 				alert("I don't know you");
 			  }
-			  userName = prompt("Who's there?", '');  // Prompt again after each loop iteration
+			  userName = prompt("Login (Username)", '');
 			}
 		  </script>
 		<meta charset="UTF-8" />
