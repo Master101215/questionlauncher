@@ -7,20 +7,22 @@
 			  if (userName === 'user') {
 				let pass = prompt('Login (Password?)', '');
 				if (pass === 'test') {
-				  alert('Welcome!');
-				  break;
+					alert('Welcome!');
+					break;
 				} else if (pass === '' || pass === null) {
-				  alert('Canceled');
-				  break;
+					alert("Canceled")
+					continue;
 				} else {
-				  alert('Wrong password');
+					alert('Wrong password');
+					continue;
 				}
 			  } else if (userName === '' || userName === null) {
 				alert('Canceled');
+				continue;
 			  } else {
 				alert("I don't know you");
+				continue;
 			  }
-			  userName = prompt("Login (Username)", '');
 			}
 		  </script>
 		<meta charset="UTF-8" />
