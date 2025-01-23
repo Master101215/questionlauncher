@@ -2,24 +2,30 @@
 <html>
 	<head>
 		<script>
-			while(userName === 'Admin' || pass === 'TheMaster') {
-				let userName = prompt("Who's there?", '');
-				if (userName === 'Admin') {
-				  let pass = prompt('Password?', '');
-			  		if (pass === 'TheMaster') {
-			  	  	alert( 'Welcome!' );
-			  		} else if (pass === '' || pass === null) {
-			  		  alert( 'Canceled' );
-			  		} else {
-			  	  	alert( 'Wrong password' );
-			  	}
-				} else if (userName === '' || userName === null) {
-				  alert( 'Canceled' );
+			let userName = prompt("Who's there?", '');
+		  
+			while(userName === 'Admin' || userName === '') {
+			  if (userName === 'Admin') {
+				let pass = prompt('Password?', '');
+				if (pass === 'TheMaster') {
+				  alert('Welcome!');
+				  break;  // Exit the loop after successful login
+				} else if (pass === '' || pass === null) {
+				  alert('Canceled');
+				  break;  // Exit the loop if canceled
 				} else {
-  					alert( "I don't know you" );
+				  alert('Wrong password');
 				}
+			  } else if (userName === '' || userName === null) {
+				alert('Canceled');
+				break;  // Exit the loop if canceled
+			  } else {
+				alert("I don't know you");
+				break;  // Exit the loop if an unknown username is entered
+			  }
+			  userName = prompt("Who's there?", '');  // Prompt again after each loop iteration
 			}
-		  </script>		  
+		  </script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="QuestionLauncher 1.8" />
