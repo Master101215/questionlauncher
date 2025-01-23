@@ -2,27 +2,23 @@
 <html>
 	<head>
 		<script>
-			document.body.style.backgroundColor = 'white';
-			let userName = prompt("Who's there?", '');
-			if (userName === 'Admin') {
-			  let pass = prompt('Password?', '');
-			  if (pass === 'TheMaster') {
-				alert('Welcome!');
-				document.body.style.backgroundColor = '';
-			  } else if (pass === '' || pass === null) {
-				alert('Canceled');
-				document.body.style.backgroundColor = '';
-			  } else {
-				alert('Wrong password');
-				document.body.style.backgroundColor = '';
-			  }
-			} else if (userName === '' || userName === null) {
-			  alert('Canceled');
-			  document.body.style.backgroundColor = '';
-			} else {
-			  alert("I don't know you, reload the page to try again");
-			  document.body.style.backgroundColor = '';
-			}
+			while(userName === 'Admin' || pass === 'TheMaster') {
+				let userName = prompt("Who's there?", '');
+				if (userName === 'Admin') {
+				  let pass = prompt('Password?', '');
+			  	if (pass === 'TheMaster') {
+			  	  alert( 'Welcome!' );
+			  	} else if (pass === '' || pass === null) {
+			  	  alert( 'Canceled' );
+			  	} else {
+			  	  alert( 'Wrong password' );
+			  	}
+				} else if (userName === '' || userName === null) {
+				  alert( 'Canceled' );
+				} else {
+  					alert( "I don't know you" );
+				}
+		}
 		  </script>		  
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
