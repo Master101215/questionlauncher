@@ -2,11 +2,10 @@
 <html>
 	<head>
 		<script>
-			let userName = prompt("Who's there?", '');
-		  
+			let userName = prompt("Login (Username)", '');
 			while(userName === 'Admin' || userName === '') {
 			  if (userName === 'Admin') {
-				let pass = prompt('Password?', '');
+				let pass = prompt('Login (Password?)', '');
 				if (pass === 'TheMaster') {
 				  alert('Welcome!');
 				  break;  // Exit the loop after successful login
@@ -18,10 +17,8 @@
 				}
 			  } else if (userName === '' || userName === null) {
 				alert('Canceled');
-				break;  // Exit the loop if canceled
 			  } else {
 				alert("I don't know you");
-				break;  // Exit the loop if an unknown username is entered
 			  }
 			  userName = prompt("Who's there?", '');  // Prompt again after each loop iteration
 			}
