@@ -4,23 +4,22 @@
 		<script>
 			function loginMessage() {
 				let userName = prompt("Login (Username)", '');
-				while (userName === 'user' || userName === '') {
+				while (userName ?? 'user') {
 			  	if (userName === 'user') {
 					let pass = prompt('Login (Password?)', '');
 					if (pass === 'test') {
 					  alert('Welcome!');
 					  break;
-					} else if (pass === '' || pass === null) {
-					  alert("Canceled");
-					  login()
-					} else {
-					  alert('Wrong password, please try again');
-					  login()
-					}
-			  	} else if (userName === '' || userName === null) {
+					} 
+					else if (pass ?? 'user') {
+					  alert("Wrong Password, please try again");
+					  loginMessage()
+			  	} 
+				else if (userName === '' || userName === null) {
 					alert('Canceled, please try again');
 					login()
-			  	} else {
+			  	} 
+				else {
 					alert("Wrong username/password, please try again");
 					login()
 			  	}
