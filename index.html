@@ -4,30 +4,27 @@
 		<script>
 			function loginMessage() {
 				let userName = prompt("Login (Username)", '');
-				while (userName ?? 'user') {
+				while (userName == '' || userName == null) {
 			  	if (userName === 'user') {
 					let pass = prompt('Login (Password?)', '');
 					if (pass === 'test') {
-					  alert('Welcome!');
+					  alert("Welcome!");
 					  break;
-					} 
-					else if (pass ?? 'user') {
+					}
+					else {
 					  alert("Wrong Password, please try again");
-					  loginMessage()
-			  	} 
-				else if (userName === '' || userName === null) {
-					alert('Canceled, please try again');
-					login()
+					  var userName = null
 			  	} 
 				else {
 					alert("Wrong username/password, please try again");
+					var userName = null
 					login()
 			  	}
 			  	userName = prompt("Login (Username)", '');
 				}
 			}
 			loginMessage()
-		  </script>
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="QuestionLauncher 1.8" />
