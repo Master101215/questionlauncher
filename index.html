@@ -2,28 +2,33 @@
 <html>
 	<head>
 		<script>
-			let userName = prompt("Login (Username)", '');
-			while(userName === 'user' || userName === '') {
-			  if (userName === 'user') {
-				let pass = prompt('Login (Password?)', '');
-				if (pass === 'test') {
-					alert('Welcome!');
-					break;
-				} else if (pass === '' || pass === null) {
-					alert("Canceled")
-					continue;
-				} else {
-					alert('Wrong password');
-					continue;
-				}
-			  } else if (userName === '' || userName === null) {
-				alert('Canceled');
-				continue;
-			  } else {
-				alert("I don't know you");
-				continue;
-			  }
+			function login() {
+				let userName = prompt("Login (Username)", '');
+		  
+				while (userName === 'user' || userName === '') {
+			  	if (userName === 'user') {
+					let pass = prompt('Login (Password?)', '');
+					if (pass === 'test') {
+					  alert('Welcome!');
+					  break;
+					} else if (pass === '' || pass === null) {
+					  alert("Canceled");
+					  login()
+					} else {
+					  alert('Wrong password, please try again');
+					  login()
+					}
+			  	} else if (userName === '' || userName === null) {
+					alert('Canceled, please try again');
+					login()
+			  	} else {
+					alert("Wrong username/password, please try again");
+					login()
+			  	}
+			  	userName = prompt("Login (Username)", '');
 			}
+			}
+			login()
 		  </script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
